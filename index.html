@@ -106,8 +106,8 @@
         th, td {    
             padding: 10px;    
             border: 1px solid #ccc;    
-            text-align: center;
-          }    
+            text-align: center;    
+        }    
         th {    
             background-color: #f2f2f2;    
         }    
@@ -179,7 +179,8 @@ function backToTimetable() {
     document.getElementById('regularTimetableSection').style.display = 'none';    
     document.getElementById('dummyTimetableSection').style.display = 'none';    
 }
-  </script>  <div id="reviewsSection" class="hidden">
+
+</script>  <div id="reviewsSection" class="hidden">
 <h2>Student Reviews</h2>
 <p>"This website helped me so much in my studies!" - Newton</p>
 <p>"AcademeForge is amazing for study materials!" - Einstein</p>
@@ -268,19 +269,19 @@ function displaySubjects(selectedClass, selectedStream) {
         '10': ['Mathematics', 'Science', 'Social Science', 'English', 'Hindi'],    
         '11-Science': ['Physics', 'Chemistry', 'Biology', 'Mathematics', 'English'],    
         '11-Commerce': ['Accountancy', 'Business Studies', 'Economics', 'Mathematics', 'English'],    
-        '11-Arts': ['History', 'Geography', 'Political Science', 'Sociology', 'English'],
-      '12-Science': ['Physics', 'Chemistry', 'Biology', 'Mathematics', 'English'],    
+        '11-Arts': ['History', 'Geography', 'Political Science', 'Sociology', 'English'],    
+        '12-Science': ['Physics', 'Chemistry', 'Biology', 'Mathematics', 'English'],    
         '12-Commerce': ['Accountancy', 'Business Studies', 'Economics', 'Mathematics', 'English'],    
         '12-Arts': ['History', 'Geography', 'Political Science', 'Sociology', 'English']    
     };    
 
-    const key = selectedStream ? ${selectedClass}-${selectedStream} : selectedClass;    
+    const key = selectedStream ? `${selectedClass}-${selectedStream}` : selectedClass;    
     const subjectList = subjects[key] || [];    
     const listContainer = document.getElementById('subjectList');    
 
     listContainer.innerHTML = '';    
     subjectList.forEach(subject => {    
-        listContainer.innerHTML += <li><img src="https://via.placeholder.com/50" alt="subject"> ${subject} <button onclick="alert('Google link coming soon')">Access to Notes</button></li>;    
+        listContainer.innerHTML += `<li><img src="https://via.placeholder.com/50" alt="subject"> ${subject} <button onclick="alert('Google link coming soon')">Access to Notes</button></li>`;    
     });    
 
     document.getElementById('streamSelection').classList.add('hidden');    
@@ -299,4 +300,3 @@ function goBack() {
 </script>  </body>
 
 </html>
-          
